@@ -4,6 +4,7 @@ $white: #fff;
 $lightGray : #cfcfcf;
 $black: #0d0c0f;
 $mainColor: #f3223b;
+$mainColorHvr: #ca0c22;
 
 $fontFam1: "Roboto";
 $fontFam2: "Montserrat";
@@ -27,154 +28,231 @@ $fontFam2: "Montserrat";
     box-sizing: border-box;
 }
 
-
-
-
-.header {
-    //border: dashed red; 
-    @include grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    padding: 2rem;
+body {
     background-color: $black;
-    
-    .logo-header {
-        //border: dashed red; 
-        color: $white;
-        font-size: 1.2rem;
-
-        & h2 {
-            text-align: center;
-        }
-        
-        
-    }
-    
-    .menu-header {
-        //border: dashed red; 
-        @include flexB;
-        gap: 1rem;
-        list-style: none;
-        padding: 1rem;
-        
-        & a {
-            text-decoration: none;
-            font-size: .9rem;
-            font-weight: 500;
-            color: $white;
-        }
-    }
-    
-.searchBar-cntr {
-    //border: dashed red; 
-    display: flex;
-    justify-content: center;
-
-    .search-header {
-        //border: dashed red; 
-        width: 80%;
-        height: 30px;
-        border-radius: 16px;
-        border: none;
-        background-color: $gray;
-    }
 }
 
+.header {
+    //border: 1px dashed red;
+    @include flexB();
+    padding: 1.5rem 3.5rem;
+    align-items: center;
+    
+    .logo-header {
+        //border: 1px dashed red;
+        color: $white;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+    }
+    
+    
+    .menu-cntr {
+        
+        .menu-header {
+            //border: 1px dashed red;
+            @include flexB();
+            gap: 2rem;
+            list-style: none;
+            
+            a {
+                text-decoration: none;
+                color: $lightGray;
+                font-size: .9rem;
+
+                transition: .2s ease-out;
+
+                &:hover {
+                    font-size: .92rem;
+                    color: $white;
+                }
+            }
+        }
+    }
+    
+    .searchBar-cntr {
+        //border: 1px dashed red;
+
+
+        .search-header {
+            //border: 1px dashed red;
+            border: none;
+            width: 350px;
+            height: 30px;
+            border-radius: 15px;
+            padding: 0 1rem;
+
+            &:focus {
+                
+                outline: none;
+                border: solid 2px $mainColor;
+            }
+        }
+    }
+    
     .user-cntr {
-       //border: dashed red; 
         display: flex;
         justify-content: center;
-    }
-    .user-header {
-        //border: dashed red; 
-        align-self: center;
-        width: 75px;
-        height: 75px;
-        border-radius: 50%;
-        background-color: $white;
+        
+        .user-header {
+            background-color: $white;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 2px solid $mainColor;
+
+            cursor: pointer;
+            transition: .15s ease-in;
+
+            &:hover {
+                opacity: .7;
+            }
+
+        
+        }
     }
 }
 
 .body-pg {
-    display: grid;
-    grid-template-columns: 1fr 7fr;
+    display: flex;
     
     .sideBar-body {
-
-        //border: dashed red; 
-        height: 100vh;
         background-color: $gray;
-        padding: 1rem 0 0 1.5rem;
+        width: 12.5rem;
         
         & h2 {
+            padding: 2rem 1rem;
             color: $lightGray;
             font-size: 1rem;
-            font-weight: 400;
-            padding-left: 1rem;
-            padding-bottom: 2rem;
         }
         
         .menuList-SB {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            
-            & li {
-                list-style: none;
-            }
-            
-            & a {
+            padding: 0 1rem;
+            list-style: none;
+
+            .menuItem-SB {
+                display: flex;
+                gap: 1rem;
                 color: $lightGray;
-                text-decoration: none;
-                font-size: .8rem;
-            }
+                
+                transition: .2s ease-in;
+                
+                &:hover {
+                    font-size: 1.02rem;
+                    color: $white;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: $lightGray;
+                    text-wrap: nowrap;
+
+                    transition: .2s ease-in;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }            
         }
-        
     }
     
     .midSection-body {
-        background-color: $black;
-        padding: 0 2.5rem;
+        //border: 1px dashed red;
+        width: 87%;
+        margin: 0 auto;
+        
         
         #infoCard-body {
-            //border: dashed red; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            //border: 1px dashed red;
+            padding: 10rem 2rem;
             background-color: $gray;
-            border-radius: 0 2rem 2rem 0;
-            padding: 0 0 0 1rem;
-
+            border-radius: 0 5rem 5rem 0;
+            
+            
+            
             width: 100%;
-            height: 45vh;
-
+            height: 35rem;
+            
             h2 {
-                color: $white;
                 font-size: 3.5rem;
                 font-weight: 600;
-            }
-
-            p {
-                padding: 1rem 0 2.5rem 0;
                 color: $white;
-                font-size: 1.1rem;
-                font-weight: 300;
             }
-
+            p {
+                padding: 2rem 0 4rem 0;
+                color: $lightGray;
+                font-size: .9rem;
+                
+            }
+            
             .btn-IC-body {
-                width: 15%;
-                padding: 1.5rem;
-                border-radius: 1.5rem;
+                background-color: $mainColor;
+                
+                padding: 1rem 3.5rem;
+                border-radius: 1rem;
+                margin-top: 10rem;
+                
+                font-size: 1.2rem;
+                font-weight: 600;
                 color: $white;
                 text-decoration: none;
-                font-size: 1.1rem;
-                font-weight: 500;
-                text-align: center;
-                background-color: $mainColor;
+
+                transition: .2s ease-in;
+
+                &:hover {
+                    background-color: $mainColorHvr;
+                }
+                
+            }
+        }
+    }
+    
+    .cards-cntr {
+        padding: 2rem 0;
+        //border: 1px dashed red;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        
+        .cardCompany {
+            //border: 1px dashed red;
+            background-color: $black;
+            border: 1px solid #ffffff56 ;
+            display: flex;
+            justify-content: center;
+            
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: .15s ease-in;
+
+            &:hover {
+                background-color: $gray;
+            }
+
+            img {
+                
+                width: 100%;
+                
             }
 
         }
+    }
+}
+
+
+footer{
+    padding: 2rem 0 .5rem 0;
+    display: flex;
+    justify-content: center;
+    .footer-copy {
+        color: $white;
+        text-align: center;
     }
 
 }

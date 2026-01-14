@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Review</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
                 <h2>FILMAX</h2>
             </div>
     
-            <div >
+            <div class="menu-cntr">
                 <ul class="menu-header">
                     <li>
                         <a href="#">Movies</a>
@@ -43,8 +43,7 @@
             </div>
     
             <div class="user-cntr">
-                <div class="user-header">   
-                </div>
+                    <img src="/imgs/thispersondoesnotexist.jpg" class="user-header" alt="">   
             </div>
         </div>
 
@@ -58,16 +57,20 @@
             <article>
                 <h2>MENU</h2>
                 <ul class="menuList-SB">
-                    <li>
+                    <li class="menuItem-SB">
+                        <i data-feather="search"></i>
                         <a href="#">Discovery</a>
                     </li>
-                    <li>
+                    <li class="menuItem-SB">
+                        <i data-feather="star"></i>
                         <a href="#">Top Rated</a>
                     </li>
-                    <li>
+                    <li class="menuItem-SB">
+                        <i data-feather="watch"></i>
                         <a href="#">Coming Soon</a>
                     </li>
-                    <li>
+                    <li class="menuItem-SB">
+                        <i data-feather="settings"></i>
                         <a href="#">Settings</a>
                     </li>
                 </ul>
@@ -79,31 +82,41 @@
                 <h2>Title</h2>
                 <p>Sub title</p>
 
-                <a href="#" class="btn-IC-body">Watch Trailer</a>
+                <a href="#" class="btn-IC-body"></i>Watch Trailer</a>
             </div>
 
-            <div>
-                <div>
-                    <img src="" alt="logoCompany">
+            <div class="cards-cntr">
+                <div class="cardCompany">
+                    <img src="/imgs/marvelIcon.png" alt="logoCompany">
                 </div>
-            </div>
-
-            <div>
-                <h2>Top Rated</h2>
-    
-                <div>
-                    <img src="" alt="Movie">
-                    <h3>Title</h3>
+                <div class="cardCompany">
+                    <img src="/imgs/swIcon.png" alt="logoCompany">
+                </div>
+                <div class="cardCompany">
+                    <img src="/imgs/ngIcon.png" alt="logoCompany">
+                </div>
+                <div class="cardCompany">
+                    <img src="/imgs/dpIcon.png" alt="logoCompany">
+                </div>
+                <div class="cardCompany">
+                    <img src="/imgs/apIcon.png" alt="logoCompany">
                 </div>
             </div>
 
         </section>
 
+
+
     </main>
 
     <footer>
-
+        <small class="footer-copy">&copy; 2026 AR page practice</small>
     </footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
 
 </body>
 </html>
