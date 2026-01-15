@@ -1,0 +1,23 @@
+/* VARIABLES */
+$gray: #1a161f;
+$white: #fff;
+$lightGray : #cfcfcf;
+$black: #0d0c0f;
+$mainColor: #f3223b;
+$mainColorHvr: #ca0c22;
+
+$fontFam1: "Roboto";
+$fontFam2: "Montserrat";
+
+/* MIXINS */
+
+@mixin flexB {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin grid {
+    display: grid;
+    gap: 1rem;
+}
+

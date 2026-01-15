@@ -1,5 +1,41 @@
 /* VARIABLES */
 /* MIXINS */
+.logo-header {
+  color: #fff;
+  font-size: clamp(1rem, -0.2143rem + 1.4286vw, 1.5rem);
+  cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: #1a161f;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search-header {
+  border: none;
+  width: 350px;
+  height: 30px;
+  border-radius: 15px;
+  padding: 0 1rem 0 2.5rem;
+}
+.search-header:focus {
+  outline: none;
+  border: solid 2px #f3223b;
+}
+
+.user-header {
+  background-color: #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #f3223b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,24 +53,19 @@ body {
   padding: 1.5rem 3.5rem;
   align-items: center;
 }
-.header .logo-header {
-  color: #fff;
-  font-size: clamp(1rem, -0.2143rem + 1.4286vw, 1.5rem);
-  cursor: pointer;
-}
-.header .menu-cntr .menu-header {
+.header .menu-header {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
   list-style: none;
 }
-.header .menu-cntr .menu-header a {
+.header .menu-header a {
   text-decoration: none;
   color: #cfcfcf;
   font-size: 0.9rem;
   transition: 0.2s ease-out;
 }
-.header .menu-cntr .menu-header a:hover {
+.header .menu-header a:hover {
   font-size: 0.92rem;
   color: #fff;
 }
@@ -43,36 +74,9 @@ body {
   display: flex;
   align-items: center;
 }
-.header .searchBar-cntr .search-icon {
-  position: absolute;
-  left: 12px;
-  width: 18px;
-  height: 18px;
-  color: #1a161f;
-  cursor: pointer;
-  z-index: 2;
-}
-.header .searchBar-cntr .search-header {
-  border: none;
-  width: 350px;
-  height: 30px;
-  border-radius: 15px;
-  padding: 0 1rem 0 2.5rem;
-}
-.header .searchBar-cntr .search-header:focus {
-  outline: none;
-  border: solid 2px #f3223b;
-}
 .header .user-cntr {
   display: flex;
   justify-content: center;
-}
-.header .user-cntr .user-header {
-  background-color: #fff;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  border: 2px solid #f3223b;
 }
 
 .body-pg {
@@ -325,4 +329,4 @@ footer .footer-copy {
     padding: 0.8rem 2rem;
     font-size: 1rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=main.css.map */
