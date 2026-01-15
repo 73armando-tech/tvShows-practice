@@ -41,7 +41,7 @@ body {
     .logo-header {
         //border: 1px dashed red;
         color: $white;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, -0.2143rem + 1.4286vw, 1.5rem);
         cursor: pointer;
 
     }
@@ -72,6 +72,20 @@ body {
     
     .searchBar-cntr {
         //border: 1px dashed red;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            width: 18px;
+            height: 18px;
+            color: $gray;
+            cursor: pointer;
+            z-index: 2;
+
+        }
 
 
         .search-header {
@@ -80,7 +94,7 @@ body {
             width: 350px;
             height: 30px;
             border-radius: 15px;
-            padding: 0 1rem;
+            padding: 0 1rem 0 2.5rem;
 
             &:focus {
                 
@@ -100,15 +114,7 @@ body {
             height: 75px;
             border-radius: 50%;
             border: 2px solid $mainColor;
-
-            cursor: pointer;
-            transition: .15s ease-in;
-
-            &:hover {
-                opacity: .7;
-            }
-
-        
+                    
         }
     }
 }
@@ -123,7 +129,7 @@ body {
         & h2 {
             padding: 2rem 1rem;
             color: $lightGray;
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 0.3143rem + 0.5714vw, 1rem);
         }
         
         .menuList-SB {
@@ -146,6 +152,7 @@ body {
                 }
                 
                 a {
+                    font-size: clamp(0.8rem, 0.3143rem + 0.5714vw, 1rem);
                     text-decoration: none;
                     color: $lightGray;
                     text-wrap: nowrap;
@@ -168,24 +175,29 @@ body {
         
         #infoCard-body {
             //border: 1px dashed red;
-            padding: 10rem 2rem;
+            padding: 2.5rem 2rem;
             background-color: $gray;
             border-radius: 0 5rem 5rem 0;
-            
-            
-            
             width: 100%;
             height: 35rem;
             
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+            gap: 1rem;
+            
+            transition: background-image .4s ease-in-out;
+            
             h2 {
-                font-size: 3.5rem;
+                font-size: clamp(2rem, -1.6429rem + 4.2857vw, 3.5rem);
                 font-weight: 600;
                 color: $white;
             }
             p {
-                padding: 2rem 0 4rem 0;
+                //padding: 2rem 0 4rem 0;
                 color: $lightGray;
-                font-size: .9rem;
+                font-size: clamp(0.7rem, 0.2143rem + 0.5714vw, 0.9rem);
                 
             }
             
@@ -194,31 +206,78 @@ body {
                 
                 padding: 1rem 3.5rem;
                 border-radius: 1rem;
-                margin-top: 10rem;
+                //margin-top: 10rem;
                 
                 font-size: 1.2rem;
                 font-weight: 600;
                 color: $white;
                 text-decoration: none;
-
+                
+                align-self: flex-start;
+                
                 transition: .2s ease-in;
-
+                
                 &:hover {
                     background-color: $mainColorHvr;
                 }
                 
             }
+            .infoContent {
+                //border: 1px dashed red;
+                margin-top: auto;
+                max-width: 600px;
+
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
         }
     }
+
+    .results-section {
+    padding: 1rem 2rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-card {
+    background-color: $gray;
+    border-radius: 1rem;
+    //overflow: hidden;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    h4 {
+        padding: .8rem;
+        font-size: .9rem;
+        color: $white;
+        text-align: center;
+    }
+}
     
     .cards-cntr {
         padding: 2rem 0;
         //border: 1px dashed red;
-        overflow: hidden;
+        //overflow: hidden;
         box-sizing: border-box;
         display: flex;
         justify-content: space-around;
-        gap: 1rem;
+        flex-wrap: wrap;
+        gap: 2rem;
         
         .cardCompany {
             //border: 1px dashed red;
@@ -226,12 +285,16 @@ body {
             border: 1px solid #ffffff56 ;
             display: flex;
             justify-content: center;
-            
+
+            width: 300px;
+            //flex-wrap: wrap;
+
             border-radius: 1rem;
             cursor: pointer;
             transition: .15s ease-in;
 
             &:hover {
+                transform: scale(1.01);
                 background-color: $gray;
             }
 
@@ -255,4 +318,150 @@ footer{
         text-align: center;
     }
 
+}
+
+// --- Media Queries --- //
+
+// ---  Header --- //
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 1rem 2rem;
+        
+        .searchBar-cntr .search-header {
+            width: 220px;
+        }
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+        
+        .searchBar-cntr .search-header {
+            width: 100%;
+        }
+        
+        .user-header {
+            width: 55px;
+            height: 55px;
+        }
+    }
+}
+
+// ---  Sidebar --- //
+
+@media (max-width: 768px) {
+    
+    .sideBar-body {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 260px;
+        z-index: 1000;
+
+        transition: left .3s ease-in-out;
+    }
+
+    .sideBar-body.active {
+        left: 0; 
+    }
+
+    .midSection-body {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 900;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
+
+
+// ---  InfoCard --- //
+
+@media (max-width: 1024px) {
+    #infoCard-body {
+        height: 28rem;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #infoCard-body {
+        height: 22rem;
+        border-radius: 0;
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: .5rem;
+        }
+    }
+}
+
+// ---  Results --- //
+
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .result-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+// ---  Logos --- //
+
+@media (max-width: 768px) {
+    .cards-cntr {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cardCompany {
+        width: 120px;
+    }
+}
+
+
+// ---  Header --- //
+
+@media (max-width: 480px) {
+    .btn-IC-body {
+        padding: .8rem 2rem;
+        font-size: 1rem;
+    }
 }
